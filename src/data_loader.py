@@ -3,7 +3,7 @@ from datetime import date,timedelta
 import numpy as np
 import neural_net
 
-f = open('saves/data_saves.txt', 'r')
+f = open('../saves/data_saves.txt', 'r')
 #for x in range(900):
 #    tempsArray = requestByZip("02459",x)
 #    f.write(str(tempsArray)) #Note to self, never forget a new line again
@@ -35,5 +35,5 @@ for x in range(len(split_up)):
 		print("ERROR" + str(len(split_up[x])))
 
 oct_9_temp = [62.84, 62.58, 62.65, 62.79, 62.03, 61.43, 60.77, 58.87, 56.68, 56.34, 55.68, 55.29, 54.49, 54.61, 54.43, 54.05, 53.51, 52.69, 51.49, 50.71, 44.79, 43.6, 42.74, 41.58]
-neural_net.main(split_up) #Do not run this line and the line below it
-#neural_net.test_load(oct_9_temp) #For that will cause a graph duplication
+#neural_net.main(split_up) #Do not run this line and the line below it
+neural_net.test_load(oct_9_temp) #For that will cause a graph duplication

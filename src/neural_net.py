@@ -80,7 +80,7 @@ def main(temps_array):
             print(NUM_HIDDEN, epoch, np.mean(np.argmax(tr_y, axis=1) ==
                                  sess.run(predict_op, feed_dict={X: tr_x, Y: tr_y})))
 
-        save_path = saver.save(sess, "saves/model.ckpt")
+        save_path = saver.save(sess, "../saves/model.ckpt")
         print("Model saved in file: %s" % save_path)
 
 def test_load(temps_array):
@@ -112,7 +112,7 @@ def test_load(temps_array):
     with tf.Session() as sess:
         tf.initialize_all_variables().run()
         # Restore variables from disk.
-        saver.restore(sess, "saves/model.ckpt")
+        saver.restore(sess, "../saves/model.ckpt")
         print("Model restored.")
         # Do some work with the model
         teX = np.array(normalized_temps)
